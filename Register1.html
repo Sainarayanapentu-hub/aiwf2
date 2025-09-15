@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="image1.png" />
+  <title>అఖిల భారత చేనేత కార్మికుల సమాఖ్య</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      color: #333;
+      font-family: "Noto Sans Telugu", Arial, sans-serif;
+      background: #f9f9f9;
+    }
+    :root {
+      --primary: #15b800; 
+    }
+
+    /* First header */
+    header.first-header {
+      display: flex;  
+      align-items: center;         
+      background-color: #e49090;   
+      width: 100%;
+      height: 12vh;
+      padding: 0 10px;
+    }
+    #logo {
+      margin: 15px; 
+      height: 110px;
+      width: 180px;
+      border-radius: 50%;
+    }
+    /* Banner */
+    .banner {
+      font-size: 2.5rem;
+      cursor: pointer;
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .banner img {
+      border-radius: 50%;
+      height: 65px;
+    }
+
+    /* Second header */
+    header.second-header {
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      background: #72b1ae;
+      width: 100%;
+      height: 11vh;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 10px;
+    }
+    nav ul li img {
+      height: 65px;
+      width: 90px;
+      border-radius: 6px;
+    }
+
+    /* Third header */
+    header.three-header {
+      background: #f3ac7d;
+      width: 100%;
+      height: 7vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    header.three-header nav button {
+      margin: 0 8px;
+      background: #fd9904;
+      color: #000;
+      padding: 8px 18px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    header.three-header nav button:hover {
+      background: #9aa314;
+    }
+
+    /* Page sections */
+    .page {
+      display: none;
+      padding: 50px;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .page.active {
+      display: block;
+    }
+
+    #Art { background: #dbeafe; }
+    #News { background: #fde68a; }
+    #about { background: #bbf7d0; }
+    #Events { background: #fecdd3; }
+    #Register {
+      background-image: url("background.jpg");
+      background-attachment: fixed;
+      background-size: cover;  
+    }
+
+    /* Form */
+    .container {
+      max-width: 500px;
+      margin: 30px auto;
+      background: #dfd0cc;
+      padding: 24px;
+      border-radius: 8px;
+      text-align: left;
+    }
+    h2 {
+      text-align: center; 
+      color: #532fb8;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 7px;
+      margin-bottom: 14px;
+      border-radius: 4px;
+      border: 1px solid #a19d9d;
+    }
+    button[type="submit"] {
+      background: #fd9904;
+      color: #000;
+      padding: 8px 22px;
+      border: none;
+      border-radius: 34px;
+      cursor: pointer; 
+    }
+    button[type="submit"]:hover {
+      background: #9aa314;
+    }
+
+    /* Response message */
+    #response {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    /* Social icons */
+    .social-icons {
+      position: fixed;  
+      top: 40%;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+    .social-icons a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      background: #25D366; /* WhatsApp */
+      color: white;
+      text-decoration: none;
+      border-radius: 8px 0 0 8px;
+      font-size: 24px;
+      transition: 0.3s;
+    }
+    .social-icons a.facebook {
+      background: #1877F2; /* Facebook */
+    }
+    .social-icons a:hover {
+      transform: scale(1.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .banner { font-size: 1.8rem; text-align: center; }
+      nav ul { gap: 20px; flex-wrap: wrap; }
+      #logo { width: 120px; height: 90px; }
+      .container { width: 90%; padding: 20px; }
+      input, select, textarea { font-size: 16px; }
+    }
+
+    @media (max-width: 768px) {
+      header.first-header {
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+      }
+      #logo {
+        margin: 10px 0;
+        width: 100px;
+        height: 100px;
+      }
+      .banner {
+        font-size: 1.3rem;
+        padding: 10px;
+      }
+      .banner img { height: 50px; }
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+      }
+      header.three-header { flex-direction: column; height: auto; padding: 10px; }
+      header.three-header nav button {
+        margin: 5px 0;
+        width: 90%;
+      }
+      .container {
+        width: 90%;
+        padding: 15px;
+      }
+      .social-icons {
+        top: unset;
+        bottom: 15px;
+        right: 10px;
+        flex-direction: row;
+        gap: 10px;
+      }
+      .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        border-radius: 50%;
+      }
+      .page { padding: 30px 15px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- First Header -->
+  <header class="first-header">  
+    <a href="#"><img id="logo" src="image 1.png" alt="Company Logo"></a>
+    <h1 class="banner">
+      <img id="circle" src="./images/1.jpeg" alt="centered">
+      ALL INDIA WEAVERS FEDERATION
+    </h1>
+  </header>
+
+  <!-- Second Header -->
+  <header class="second-header">
+    <nav>
+      <ul>
+        <li><img src="./images/2.jpeg" alt=""></li>
+        <li><img src="./images/3.jpeg" alt=""></li>
+        <li><img src="./images/4.jpeg" alt=""></li>
+        <li><img src="./images/5.jpeg" alt=""></li>
+        <li><img src="./images/6.jpeg" alt=""></li>
+        <li><img src="./images/7.jpeg" alt=""></li>
+        <li><img src="./images/8.jpeg" alt=""></li>
+        <li><img src="./images/9.jpeg" alt=""></li>
+        <li><img src="./images/10.jpeg" alt=""></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Third Header (Navigation) -->
+  <header class="three-header">
+    <nav>
+      <button onclick="showPage('Register')">Register / నమోదు చేసుకోండి</button>
+      <button onclick="showPage('Art')">Art Craft / ఆర్ట్ క్రాఫ్ట్</button>
+      <button onclick="showPage('News')">News / వార్తలు</button>
+      <button onclick="showPage('about')">About us / మా గురించి</button>
+      <button onclick="showPage('Events')">Events / ఈవెంట్స్</button>
+    </nav>
+  </header>
+
+  <!-- Pages -->
+  <main>
+    <section id="Register" class="page active">
+      <div class="container">
+        <h2>అఖిల భారత చేనేత కార్మికుల సమాఖ్య సభ్యత్వ నమోదు ఫార్మ్</h2>
+        <form id="registerForm" action="registrations.php" method="POST" enctype="multipart/form-data">
+          <label for="name">పూర్తి పేరు</label>
+          <input type="text" id="name" name="name" placeholder="మీ పూర్తిపేరు ఇవ్వండి" required>
+
+          <label for="fathername">తండ్రి/తల్లి/భర్త పేరు</label>
+          <input type="text" id="fathername" name="fathername" placeholder="తండ్రి పేరు నమోదు చేయండి">
+
+          <label for="gender">లింగం</label>
+          <select id="gender" name="gender" required>
+            <option value="">ఎంచుకోండి</option>
+            <option value="male">పురుషుడు</option>
+            <option value="female">స్త్రీ</option>
+            <option value="other">ఇతర</option>
+          </select>
+
+          <label for="dob">పుట్టిన తేదీ</label>
+          <input type="date" id="dob" name="dob">
+
+          <label for="contact">ఫోన్ నంబర్</label>
+          <input type="tel" id="contact" name="contact" placeholder="ఫోన్ నంబర్ నమోదు చేయండి" required>
+
+          <label for="address">చిరునామా</label>
+          <textarea id="address" name="address" rows="3" placeholder="పూర్తి చిరునామా నమోదు చేయండి" required></textarea>
+
+          <label for="dist_mandal">మండలం & జిల్లా</label>
+          <textarea id="dist_mandal" name="dist_mandal" rows="2" placeholder="మండలం & జిల్లా" required></textarea>
+
+          <label for="occupation">వృత్తి</label>
+          <input type="text" id="occupation" name="occupation" placeholder="మీ వృత్తిని నమోదు చేయండి">
+
+          <label for="membership">సభ్యత్వ రకం</label>
+          <select id="membership" name="membership" required>
+            <option value="">ఎంచుకోండి</option>
+            <option value="regular">సాధారణ సభ్యుడు</option>
+            <option value="executive">చాలా ముఖ్యమైన వ్యక్తి సభ్యుడు</option>
+          </select>
+
+          <label for="photo">ఫోటో అప్‌లోడ్ చేయండి</label>
+          <input type="file" id="photo" name="photo">
+
+          <button type="submit">నమోదు చేయండి</button>
+        </form>
+        <div id="response"></div>
+      </div>
+    </section>
+
+    <section id="Art" class="page">
+      <h1>Art Craft / ఆర్ట్ క్రాఫ్ట్</h1>
+      <p>This is the Art Craft section.</p>
+    </section>
+
+    <section id="News" class="page">
+      <h1>News / వార్తలు</h1>
+      <p>Details about News updated.</p>
+    </section>
+
+    <section id="about" class="page">
+      <h1>About Us</h1>
+      <p>Information about us.</p>
+    </section>
+
+    <section id="Events" class="page">
+      <h1>Events / ఈవెంట్స్</h1>
+      <p>Events details here.</p>
+    </section>
+  </main>
+
+  <!-- Social Icons -->
+  <div class="social-icons">
+    <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://facebook.com/yourpage" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxU0chw-cytE0g9QLhRlLcxhkcf4OFx3hcaQkab1adi7goY-Gx8f0-QdFfFH6xbKzap/exec";
+    const form = document.getElementById("registerForm");
+    const responseMessage = document.getElementById("response");
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      responseMessage.textContent = "Processing...";
+      responseMessage.style.color = "blue";
+      
+      fetch(scriptURL, { method: "POST", body: formData })
+        .then(response => {
+          if (response.ok) {
+            responseMessage.textContent = "విజయవంతంగా సమర్పించబడింది - Submitted Successfully!";
+            responseMessage.style.color = "green";
+            form.reset();
+          } else {
+            throw new Error('Network response was not ok');
+          }
+        })
+        .catch(error => {
+          console.error("Error!", error.message);
+          responseMessage.textContent = "పొరపాటు జరిగింది!";
+          responseMessage.style.color = "red";
+        });
+    });
+  </script>
+</body>
+</html>
